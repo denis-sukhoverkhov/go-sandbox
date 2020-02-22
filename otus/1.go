@@ -1,9 +1,9 @@
 package main
 
 import (
-"fmt"
-"github.com/beevik/ntp"
-"log"
+	"fmt"
+	"github.com/beevik/ntp"
+	"log"
 )
 
 func main() {
