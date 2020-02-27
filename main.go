@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-import "./algorithms/sort"
+import (
+	"fmt"
+	"github.com/denis-sukhoverkhov/go-sandbox/tree/master/otus/algorithms/sort"
+)
 
 func main() {
 	//fmt.Println(algorithms.FactorialRec(10))
