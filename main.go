@@ -1,9 +1,9 @@
-package main
+package ss
 
-import (
-	"fmt"
-	"github.com/denis-sukhoverkhov/go-sandbox/tree/master/otus/algorithms/sort"
-)
+import "fmt"
+
+var DEBUG bool
+
 
 func main() {
 	//fmt.Println(algorithms.FactorialRec(10))
@@ -44,7 +44,9 @@ func main() {
 	//sort.InsertionSort(arr)
 	//fmt.Println(arr)
 
-	arr := []int32{12, 34, 54, 2, 3, 17, 20, 100, 16, 45, 23, 656, 3, 6, 7, 0}
-	sort.ShellSort(arr)
-	fmt.Println(arr)
+	//arr := []int32{12, 34, 54, 2, 3, 17, 20, 100, 16, 45, 23, 656, 3, 6, 7, 0}
+	//sort.ShellSort(arr)
+	//fmt.Println(arr)
+
+	fmt.Printf("DEBUG is %t\n", DEBUG)
 }

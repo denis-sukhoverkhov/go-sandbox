@@ -6,6 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"reflect"
 	"testing"
+	"unsafe"
 )
 
 type User struct {
@@ -50,4 +51,8 @@ func TestMapOrder(t *testing.T) {
 func TestExport(t *testing.T) {
 	assert.Equal(t, "", quizzExport.BigBro)
 	assert.Equal(t, "", quizzExport.Долли)
+
+	b := true
+	c := unsafe.Sizeof(b)
+	assert.Equal(t, uintptr(1), c)
 }
