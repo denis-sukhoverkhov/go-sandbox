@@ -16,7 +16,7 @@ func TestCountSubarrays(t *testing.T) {
 	for _, tt := range tests {
 		t.Run("", func(t *testing.T) {
 			if got := countSubarrays(tt.nums, tt.mink, tt.maxK); got != tt.expected {
-				t.Errorf("subarraysWithKDistinct() = %v, want %v", got, tt.expected)
+				t.Errorf("countSubarrays() = %v, want %v", got, tt.expected)
 			}
 		})
 	}

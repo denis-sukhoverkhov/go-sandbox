@@ -1,5 +1,8 @@
 package leetcode
 
+// 2444. Count Subarrays With Fixed Bounds
+// https://leetcode.com/problems/count-subarrays-with-fixed-bounds/
+
 func countSubarrays(nums []int, minK int, maxK int) int64 {
 
 	var res int64 = 0
