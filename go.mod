@@ -1,6 +1,6 @@
 module github.com/denis-sukhoverkhov/go-sandbox/tree/master/otus
 
-go 1.13
+go 1.22.2
 
 require (
 	github.com/TinkoffCreditSystems/invest-openapi-go-sdk v0.5.0
