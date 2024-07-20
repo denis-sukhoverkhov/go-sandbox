@@ -24,3 +24,27 @@ func TestSimplifyPath(t *testing.T) {
 	}
 
 }
+
+func TestLoopVar(t *testing.T) {
+	numbers := []*int{}
+	for i := 0; i < 3; i++ {
+		numbers = append(numbers, &i)
+	}
+
+	for i, num := range numbers {
+		assert.Equal(t, i, *num)
+	}
+}
+
+func TestSliceToPointers(t *testing.T) {
+	a := []int{1, 2, 3}
+	b := []*int{}
+
+	for i := range a {
+		b = append(b, &a[i])
+	}
+
+	for i, val := range a {
+		assert.Equal(t, val, *b[i])
+	}
+}
