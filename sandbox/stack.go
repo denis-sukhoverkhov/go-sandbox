@@ -28,3 +28,7 @@ func (s *Stack) Top() (string, error) {
 func (s *Stack) IsEmpty() bool {
 	return len(s.data) == 0
 }
+
+func (s *Stack) Items() []string {
+	return s.data
+}
