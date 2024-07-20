@@ -1,6 +1,7 @@
 package sandbox
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -47,4 +48,13 @@ func TestSliceToPointers(t *testing.T) {
 	for i, val := range a {
 		assert.Equal(t, val, *b[i])
 	}
+}
+func TestMap(t *testing.T) {
+	var m map[string]int = make(map[string]int)
+
+	fmt.Println(m["foo"])
+
+	m["foo"] = 42
+
+	fmt.Println(m["foo"])
 }
