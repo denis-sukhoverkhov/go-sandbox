@@ -1,13 +1,22 @@
 package sandbox
 
-func gen(nums ...int) <-chan int {
+import (
+	"context"
+	"time"
+)
+
+func gen(ctx context.Context, nums ...int) <-chan int {
 	out := make(chan int)
 
 	go func() {
 		defer close(out)
 
 		for _, val := range nums {
-			out <- val
+			select {
+			case <-ctx.Done():
+				return
+			case out <- val:
+			}
 		}
 	}()
 
@@ -15,14 +24,21 @@ func gen(nums ...int) <-chan int {
 
 }
 
-func sq(in <-chan int) <-chan int {
+func sq(ctx context.Context, in <-chan int) <-chan int {
 	out := make(chan int)
 
 	go func() {
 		defer close(out)
 
 		for val := range in {
-			out <- val * val
+			select {
+			case <-ctx.Done():
+				return
+			case out <- func() int {
+				time.Sleep(100 * time.Millisecond)
+				return val * val
+			}():
+			}
 		}
 	}()
 
