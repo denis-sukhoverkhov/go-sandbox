@@ -7,7 +7,7 @@ import (
 )
 
 func TestStackPush(t *testing.T) {
-	stack := &Stack{}
+	var stack Stack
 
 	stack.Push("first")
 	assert.False(t, stack.IsEmpty())

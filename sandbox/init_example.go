@@ -1,8 +1,7 @@
-package main
+package sandbox
 
 import (
 	"flag"
-	"fmt"
 	"log"
 )
 
@@ -24,8 +23,4 @@ func init() {
 	}
 	// gopath may be overridden by --gopath flag on command line.
 	flag.StringVar(&gopath, "gopath", gopath, "override default GOPATH")
-}
-
-func main() {
-	fmt.Println("test")
 }
