@@ -26,9 +26,6 @@ func TestMyError(t *testing.T) {
 
 }
 
-func TestMyError2(t *testing.T) {
-
-	var e myError = myError{code: 500}
-
-	assert.Equal(t, "My error 500", fmt.Sprintf("%v", e))
+func TestRecoveryPanic(t *testing.T) {
+	safeFunc()
 }
